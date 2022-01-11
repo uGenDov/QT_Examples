@@ -39,6 +39,7 @@ Demo::Demo(QWidget *parent) : QMainWindow(parent) {
     Demo::signalsAndSlots();
     Demo::setFont(QFont("Arial", 9, -1, false));
     Demo::setWindowTitle(QString("Notepad"));
+    Demo::setWindowIcon(QIcon("D:/images/notepad.png"));
     Demo::setMinimumSize(1024, 768);
 }
 
