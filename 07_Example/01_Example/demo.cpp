@@ -195,9 +195,7 @@ void Demo::signalsAndSlots() {
 
         int value = this->progressBar->value();
         ++value;
-        if (value > 100) {
-            value = 0;
-        }
+        if (value > 100) value = 0;
 
         this->progressBar->setValue(value);
     });
