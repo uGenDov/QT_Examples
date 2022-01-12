@@ -157,7 +157,7 @@ void Demo::signalsAndSlots() {
         this->dateTimeEdit->setDateTime(QDateTime::fromString(this->lineEditDateTime->text(), "yyyy-MM-dd hh:mm:ss"));
     });
 
-    QObject::connect(this->calendarWidget, &QCalendarWidget::selectionChanged, this/*->lineEditSelectedDate*/, [&]() {
+    QObject::connect(this->calendarWidget, &QCalendarWidget::selectionChanged, this->lineEditSelectedDate, [&]() {
         QDate date = this->calendarWidget->selectedDate();
         this->lineEditSelectedDate->setText(date.toString("Год: yyyy Месяц: MM День: dd"));
     });
