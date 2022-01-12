@@ -29,11 +29,13 @@ Demo::Demo(QWidget *parent) : QWidget(parent) {
         this->vSpacer         = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
     }
 
-    Demo::setProperties();
-    Demo::setLayout();
-    Demo::signalAndSlots();
-    Demo::setWindowTitle(QString("Demo"));
-    Demo::setFont(QFont("Arial", 9, -1, false));
+    {
+        Demo::setProperties();
+        Demo::setLayout();
+        Demo::signalAndSlots();
+        Demo::setWindowTitle(QString("Demo"));
+        Demo::setFont(QFont("Arial", 9, -1, false));
+    }
 }
 
 void Demo::setLayout() {

@@ -29,32 +29,42 @@ Demo::Demo(QDialog *parent) : QDialog(parent) {
         this->buttonClose   = new QPushButton(QString("Close"), this);
     }
 
-    Demo::setProperties();
-    Demo::setLayout();
-    Demo::signalsAndSlots();
-    Demo::setFont(QFont("Arial", 9, -1, false));
-    Demo::setFixedSize(QDialog::sizeHint().width(), QDialog::sizeHint().height());
+    {
+        Demo::setProperties();
+        Demo::setLayout();
+        Demo::signalsAndSlots();
+        Demo::setFont(QFont("Arial", 9, -1, false));
+        Demo::setFixedSize(QDialog::sizeHint().width(), QDialog::sizeHint().height());
+    }
 }
 
 void Demo::setLayout() {
-    this->hLayoutFirst->addWidget(this->cBoxUnderline);
-    this->hLayoutFirst->addWidget(this->cBoxItalic);
-    this->hLayoutFirst->addWidget(this->cBoxBold);
+    {
+        this->hLayoutFirst->addWidget(this->cBoxUnderline);
+        this->hLayoutFirst->addWidget(this->cBoxItalic);
+        this->hLayoutFirst->addWidget(this->cBoxBold);
+    }
 
-    this->hLayoutSecond->addWidget(this->rButtonBlack);
-    this->hLayoutSecond->addWidget(this->rButtonBlue);
-    this->hLayoutSecond->addWidget(this->rButtonRed);
+    {
+        this->hLayoutSecond->addWidget(this->rButtonBlack);
+        this->hLayoutSecond->addWidget(this->rButtonBlue);
+        this->hLayoutSecond->addWidget(this->rButtonRed);
+    }
 
-    this->hLayoutThird->addWidget(this->buttonAccept);
-    this->hLayoutThird->addItem(this->spacer);
-    this->hLayoutThird->addWidget(this->buttonCancel);
-    this->hLayoutThird->addWidget(this->buttonClose);
+    {
+        this->hLayoutThird->addWidget(this->buttonAccept);
+        this->hLayoutThird->addItem(this->spacer);
+        this->hLayoutThird->addWidget(this->buttonCancel);
+        this->hLayoutThird->addWidget(this->buttonClose);
+    }
 
-    this->vLayout->addWidget(this->gBoxFirst);
-    this->vLayout->addWidget(this->gBoxSecond);
-    this->vLayout->addWidget(this->plainText);
-    this->vLayout->addWidget(this->line);
-    this->vLayout->addLayout(this->hLayoutThird);
+    {
+        this->vLayout->addWidget(this->gBoxFirst);
+        this->vLayout->addWidget(this->gBoxSecond);
+        this->vLayout->addWidget(this->plainText);
+        this->vLayout->addWidget(this->line);
+        this->vLayout->addLayout(this->hLayoutThird);
+    }
 }
 
 void Demo::setProperties() {
@@ -65,9 +75,7 @@ void Demo::setProperties() {
 
 void Demo::signalsAndSlots() {
     QObject::connect(this->buttonAccept, &QPushButton::clicked, this, [&]() { Demo::accept(); });
-
     QObject::connect(this->buttonCancel, &QPushButton::clicked, this, [&]() { Demo::reject(); });
-
     QObject::connect(this->buttonClose, &QPushButton::clicked, this, [&]() { Demo::close(); });
 
     QObject::connect(this->cBoxUnderline, &QCheckBox::stateChanged, this->plainText, [&]() {

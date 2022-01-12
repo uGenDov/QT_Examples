@@ -34,56 +34,70 @@ Demo::Demo(QWidget *parent) : QMainWindow(parent) {
         this->statusbar         = new QStatusBar(this);
     }
 
-    Demo::setProperties();
-    Demo::setLayout();
-    Demo::signalsAndSlots();
-    Demo::setFont(QFont("Arial", 9, -1, false));
-    Demo::setWindowTitle(QString("Notepad"));
-    Demo::setWindowIcon(QIcon("D:/images/notepad.png"));
-    Demo::setMinimumSize(1024, 768);
+    {
+        Demo::setProperties();
+        Demo::setLayout();
+        Demo::signalsAndSlots();
+        Demo::setFont(QFont("Arial", 9, -1, false));
+        Demo::setWindowTitle(QString("Notepad"));
+        Demo::setWindowIcon(QIcon("D:/images/notepad.png"));
+        Demo::setMinimumSize(1024, 768);
+    }
 }
 
 void Demo::setLayout() {
-    this->gridLayout->addWidget(this->textEdit);
+    {
+        this->gridLayout->addWidget(this->textEdit);
+    }
 
-    this->menubar->addAction(this->menuFile->menuAction());
-    this->menubar->addAction(this->menuEdit->menuAction());
-    this->menubar->addAction(this->menuAbout->menuAction());
+    {
+        this->menubar->addAction(this->menuFile->menuAction());
+        this->menubar->addAction(this->menuEdit->menuAction());
+        this->menubar->addAction(this->menuAbout->menuAction());
+    }
 
-    this->menuFile->addAction(this->actionNew);
-    this->menuFile->addAction(this->actionOpen);
-    this->menuFile->addAction(this->actionSaveAs);
-    this->menuFile->addSeparator();
-    this->menuFile->addAction(this->actionExit);
+    {
+        this->menuFile->addAction(this->actionNew);
+        this->menuFile->addAction(this->actionOpen);
+        this->menuFile->addAction(this->actionSaveAs);
+        this->menuFile->addSeparator();
+        this->menuFile->addAction(this->actionExit);
+    }
 
-    this->menuEdit->addAction(this->actionCut);
-    this->menuEdit->addAction(this->actionCopy);
-    this->menuEdit->addAction(this->actionPaste);
+    {
+        this->menuEdit->addAction(this->actionCut);
+        this->menuEdit->addAction(this->actionCopy);
+        this->menuEdit->addAction(this->actionPaste);
+    }
 
-    this->toolBar->addAction(this->actionNew);
-    this->toolBar->addAction(this->actionOpen);
-    this->toolBar->addAction(this->actionSaveAs);
-    this->toolBar->addSeparator();
-    this->toolBar->addAction(this->actionCut);
-    this->toolBar->addAction(this->actionCopy);
-    this->toolBar->addAction(this->actionPaste);
-    this->toolBar->addSeparator();
-    this->toolBar->addAction(this->actionBold);
-    this->toolBar->addAction(this->actionItalic);
-    this->toolBar->addAction(this->actionUnderline);
-    this->toolBar->addSeparator();
-    this->toolBar->addWidget(new QLabel(QString(" Font Size ")));
-    this->toolBar->addWidget(this->spinBox);
-    this->toolBar->addSeparator();
-    this->toolBar->addWidget(new QLabel(QString(" Font ")));
-    this->toolBar->addWidget(this->comboFont);
+    {
+        this->toolBar->addAction(this->actionNew);
+        this->toolBar->addAction(this->actionOpen);
+        this->toolBar->addAction(this->actionSaveAs);
+        this->toolBar->addSeparator();
+        this->toolBar->addAction(this->actionCut);
+        this->toolBar->addAction(this->actionCopy);
+        this->toolBar->addAction(this->actionPaste);
+        this->toolBar->addSeparator();
+        this->toolBar->addAction(this->actionBold);
+        this->toolBar->addAction(this->actionItalic);
+        this->toolBar->addAction(this->actionUnderline);
+        this->toolBar->addSeparator();
+        this->toolBar->addWidget(new QLabel(QString(" Font Size ")));
+        this->toolBar->addWidget(this->spinBox);
+        this->toolBar->addSeparator();
+        this->toolBar->addWidget(new QLabel(QString(" Font ")));
+        this->toolBar->addWidget(this->comboFont);
+        this->statusbar->addWidget(this->label);
+        this->statusbar->addWidget(this->progressBar);
+    }
 
-    this->setCentralWidget(this->centralWidget);
-    this->setMenuBar(this->menubar);
-    this->addToolBar(this->toolBar); // this->addToolBar(Qt::TopToolBarArea, this->toolBar);
-    this->setStatusBar(this->statusbar);
-    this->statusbar->addWidget(this->label);
-    this->statusbar->addWidget(this->progressBar);
+    {
+        this->setCentralWidget(this->centralWidget);
+        this->setMenuBar(this->menubar);
+        this->addToolBar(this->toolBar); // this->addToolBar(Qt::TopToolBarArea, this->toolBar);
+        this->setStatusBar(this->statusbar);
+    }
 }
 
 void Demo::setProperties() {
