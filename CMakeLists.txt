@@ -14,7 +14,7 @@ find_package(Qt5 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(QT_Examples 02_Example/01_Example/main.cpp 02_Example/01_Example/demo.cpp 02_Example/01_Example/demo.h)
+add_executable(QT_Examples 03_Example/01_Example/main.cpp 03_Example/01_Example/demo.cpp 03_Example/01_Example/demo.h)
 target_link_libraries(QT_Examples
         Qt5::Core
         Qt5::Gui

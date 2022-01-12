@@ -47,7 +47,7 @@ private:
     QAction         *actionItalic;
     QAction         *actionUnderline;
     QWidget         *centralWidget;
-    QGridLayout     *gridLayout;
+    QGridLayout     *gLayoutTop;
     QLabel          *label;
     QTextEdit       *textEdit;
     QProgressBar    *progressBar;
