@@ -1,8 +1,9 @@
 #include <QMainWindow>
+#include <QWidget>
 
 class Demo : public QMainWindow {
 public:
-    explicit Demo(QMainWindow *parent = nullptr);
+    explicit Demo(QWidget *parent = nullptr);
 
     void setProperties();
 

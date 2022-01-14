@@ -1,6 +1,6 @@
 #include "demo.h"
 
-Demo::Demo(QMainWindow *parent) : QMainWindow(parent) {
+Demo::Demo(QWidget *parent) : QMainWindow(parent) {
     {
 
     }
