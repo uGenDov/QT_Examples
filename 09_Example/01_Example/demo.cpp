@@ -6,7 +6,7 @@ Demo::Demo(QMainWindow *parent) : QMainWindow(parent) {
         this->hLayoutMain = new QHBoxLayout();
         this->toolBar = new QToolBar(this);
 
-        this->verticalLayout = new QVBoxLayout(centralwidget);
+        this->verticalLayout = new QVBoxLayout(this->centralwidget);
 
         this->actionInitList = new QAction(QIcon("D:/images/bold.png"), QString("Initialize List"), this);
         this->actionClear = new QAction(QIcon("D:/images/bold.png"), QString("Clear List"), this);
@@ -32,6 +32,20 @@ Demo::Demo(QMainWindow *parent) : QMainWindow(parent) {
         this->toolButtonInput = new QToolButton(this->page1);
         this->toolButtonAdd = new QToolButton(this->page1);
         this->toolButtonDelete = new QToolButton(this->page1);
+
+       this->verticalLayout_3 = new QVBoxLayout(this->tab1);
+       this->gBox1Tab1 = new QGroupBox(this->tab1);
+       this->horizontalLayout_2 = new QHBoxLayout(this->gBox1Tab1);
+       this->label = new QLabel(QString("Current item"), this->gBox1Tab1);
+       this->lineEdit = new QLineEdit(this->gBox1Tab1);
+       this->checkBox_2 = new QCheckBox(this->gBox1Tab1);
+       this->gBox2Tab1 = new QGroupBox(this->tab1);
+       this->horizontalLayout_3 = new QHBoxLayout(this->gBox2Tab1);
+       this->toolButtonSelectItem = new QToolButton(this->gBox2Tab1);
+       this->toolButtonSelectAll = new QToolButton(this->gBox2Tab1);
+       this->toolButtonSelectNone = new QToolButton(this->gBox2Tab1);
+       this->toolButtonSelectInv = new QToolButton(this->gBox2Tab1);
+       this->listWidget = new QListWidget(this->tab1);
     }
 
     {
@@ -56,6 +70,13 @@ void Demo::setProperties() {
     this->toolButtonInput->setText(QString("ToolButtonInput"));
     this->toolButtonAdd->setText(QString("ToolButtonAdd"));
     this->toolButtonDelete->setText(QString("ToolButtonDelete"));
+
+    this->toolButtonSelectItem->setPopupMode(QToolButton::MenuButtonPopup);
+
+    this->toolButtonSelectItem->setText(QString("ToolButton Select Item"));
+    this->toolButtonSelectAll->setText(QString("ToolButton Select All"));
+    this->toolButtonSelectNone->setText(QString("ToolButton Select None"));
+    this->toolButtonSelectInv->setText(QString("TooButton Select Inv"));
 }
 
 void Demo::setLayout() {
@@ -84,6 +105,17 @@ void Demo::setLayout() {
 
     this->splitter->addWidget(this->toolBox);
     this->splitter->addWidget(this->tabWidget);
+
+    this->horizontalLayout_2->addWidget(this->label);
+    this->horizontalLayout_2->addWidget(this->lineEdit);
+    this->horizontalLayout_2->addWidget(this->checkBox_2);
+    this->verticalLayout_3->addWidget(this->gBox1Tab1);
+    this->horizontalLayout_3->addWidget(this->toolButtonSelectItem);
+    this->horizontalLayout_3->addWidget(this->toolButtonSelectAll);
+    this->horizontalLayout_3->addWidget(this->toolButtonSelectNone);
+    this->horizontalLayout_3->addWidget(this->toolButtonSelectInv);
+    this->verticalLayout_3->addWidget(this->gBox2Tab1);
+    this->verticalLayout_3->addWidget(this->listWidget);
 
     this->hLayoutMain->addWidget(this->splitter);
     this->verticalLayout->addLayout(this->hLayoutMain);

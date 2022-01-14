@@ -5,6 +5,12 @@
 #include <QSplitter>
 #include <QToolBox>
 #include <QToolButton>
+#include <QGroupBox>
+#include <QLineEdit>
+#include <QLabel>
+#include <QCheckBox>
+#include <QListWidget>
+//#include <QGroupBox>
 
 class Demo : public QMainWindow {
 public:
@@ -41,6 +47,19 @@ private:
     QWidget *page3;
     QTabWidget *tabWidget;
     QWidget *tab1;
+    QVBoxLayout *verticalLayout_3;
+    QGroupBox *gBox1Tab1;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QCheckBox *checkBox_2;
+    QGroupBox *gBox2Tab1;
+    QHBoxLayout *horizontalLayout_3;
+    QToolButton *toolButtonSelectItem;
+    QToolButton *toolButtonSelectAll;
+    QToolButton *toolButtonSelectNone;
+    QToolButton *toolButtonSelectInv;
+    QListWidget *listWidget;
     QWidget *tab2;
     QWidget *tab3;
     QToolBar *toolBar;
