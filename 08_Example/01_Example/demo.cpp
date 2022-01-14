@@ -74,9 +74,8 @@ void Demo::setLayout() {
 void Demo::signalsAndSlots() {
     QObject::connect(this->buttonInitList, &QPushButton::clicked, this->comboItems, [&](int i = 0) {
         this->comboItems->clear();
-        QIcon icon("D:/images/city.png");
         for (; i < 20; ++i) {
-            this->comboItems->addItem(icon, QString::asprintf("Item %d", i));
+            this->comboItems->addItem(QIcon("D:/images/city.png"), QString::asprintf("Item %d", i));
         }
     });
 
